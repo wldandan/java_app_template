@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+group = 'com.wl.dandan'
+
+repositories {
+    mavenCentral()
+}
+
+MOCKITO = "org.mockito:mockito-all:1.8.5"
+HAMCREST = "org.hamcrest:hamcrest-all:1.1"
+GUAVA = "com.google.guava:guava:r09"
+COMMONS_BEANUTILS = "commons-beanutils:commons-beanutils:1.8.3"
+
+
+
+dependencies {
+    //compile fileTree(dir: 'lib/main', includes: ['*.jar'])
+    //testCompile fileTree(dir: 'lib/test', includes: ['*.jar'])
+    compile(GUAVA, COMMONS_BEANUTILS)
+    testCompile(MOCKITO, HAMCREST, GUAVA, COMMONS_BEANUTILS)
+}
